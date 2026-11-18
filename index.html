@@ -74,6 +74,26 @@ footer{border-top:1px solid var(--line);text-align:center;padding:30px 22px 40px
 .cur.on{opacity:1}
 .cur.big{width:64px;height:64px;margin:-32px 0 0 -32px;background:rgba(255,90,20,.12)}
 [hidden]{display:none!important}
+html[lang=ar] .sub,html[lang=ar] .sig,html[lang=ar] summary small,html[lang=ar] .tags span,html[lang=ar] .step h3,html[lang=ar] .card small,html[lang=ar] .card b,html[lang=ar] .vals,html[lang=ar] footer,html[lang=ar] .quote{font-family:"Cairo",sans-serif;letter-spacing:0}
+html[lang=ar] .sub{font-size:15px;font-weight:600}
+html[lang=ar] .sig{font-size:19px;font-weight:400}
+html[lang=ar] .step h3{font-size:21px}
+html[lang=ar] .quote,html[lang=ar] .vals{direction:rtl;text-align:right}
+html[lang=ar] .tags{direction:rtl;justify-content:flex-start}
+html[lang=ar] .tags span{font-size:13px}
+html[lang=ar] footer{font-size:13px}
+.basra{display:flex;gap:18px;align-items:center;margin:4px 0 16px}
+.basra p{margin:0}
+.basra figure{margin:0;flex:none;width:132px}
+.bmap{display:block;width:100%;height:auto}
+.basra figcaption{font:500 11px/1.4 "Cairo",sans-serif;color:var(--mute);margin-top:6px;text-align:center;direction:rtl}
+html[lang=en] .basra figcaption{font-family:"Montserrat",sans-serif;letter-spacing:.06em;direction:ltr}
+.bmap .shatt{stroke-dasharray:220;stroke-dashoffset:220;animation:shd 2.4s .3s cubic-bezier(.2,.7,.2,1) forwards}
+.bmap .ping{transform-box:fill-box;transform-origin:center;animation:png 2.6s ease-out infinite}
+@keyframes shd{to{stroke-dashoffset:0}}
+@keyframes png{0%{transform:scale(.6);opacity:.9}100%{transform:scale(2.6);opacity:0}}
+@media(prefers-reduced-motion:reduce){.bmap .shatt{animation:none;stroke-dashoffset:0}.bmap .ping{animation:none}}
+#bgfx{position:fixed;inset:0;width:100vw;height:100vh;height:100lvh;z-index:-1;pointer-events:none;display:block}
 form{max-width:560px;margin-top:28px}
 label{display:block;color:var(--ivory);font-weight:600;margin-bottom:18px}
 input,select,textarea{display:block;width:100%;margin-top:8px;padding:13px 16px;background:var(--bg2);color:var(--ivory);border:1px solid var(--line);border-radius:14px;font:inherit;font-weight:400}
@@ -97,8 +117,9 @@ html[lang=en] .tags{justify-content:flex-start}
 </style>
 </head>
 <body>
+<canvas id="bgfx" aria-hidden="true"></canvas>
 
-<button class="lang" id="lang" type="button" aria-label="Switch language">EN</button>
+<button class="lang" id="lang" type="button" aria-label="تبديل اللغة">EN</button>
 <header class="hero" id="top"><div class="fx" aria-hidden="true"></div>
 <svg class="mark" viewBox="0 0 400 240" role="img" aria-label="ASIRIS">
 <defs>
@@ -111,8 +132,8 @@ html[lang=en] .tags{justify-content:flex-start}
 <circle id="cl" cx="250" cy="120" r="100" fill="#0a0908" clip-path="url(#cp)"/>
 </svg>
 <h1 class="logo">ASIRIS</h1>
-<p class="sub">CREATIVE &amp; DIGITAL AGENCY</p>
-<p class="sig">Two minds. One signal.</p>
+<p class="sub">وكالة إبداعية ورقمية</p>
+<p class="sig"></p>
 <div class="btns">
 <a class="btn pri" href="#work">شاهد أعمالنا</a>
 <a class="btn" href="#start">ابدأ مشروعك</a>
@@ -124,12 +145,32 @@ html[lang=en] .tags{justify-content:flex-start}
 <p class="lead">وكالة إبداعية متكاملة تعمل عند تقاطع الاستراتيجية والإبداع والتكنولوجيا والتسويق الرقمي.</p>
 <div class="cols">
 <div>
-<p>العلامات القوية لا تُبنى بالمظهر وحده، بل برؤية واضحة وفهم عميق للجمهور واستراتيجية تحوّل الأفكار إلى قيمة والحضور إلى تأثير.</p>
-<p>من البصرة ننطلق برؤية تتجاوز الحدود المحلية، ونبني معايير جديدة في الإبداع والتسويق الرقمي.</p>
+<p>العلامات القوية لا تُبنى بالمظهر وحده بل برؤية واضحة وفهم عميق للجمهور واستراتيجية تحوّل الأفكار إلى قيمة والحضور إلى تأثير.</p>
+<div class="basra"><figure><svg class="bmap" viewBox="0 0 160 166" role="img" aria-label="خارطة تخطيطية للبصرة وشط العرب">
+<defs><clipPath id="bmg"><path d="M158.3 155.3 L143.1 151.4 L131.3 153.4 L117.9 151.4 L102.7 147.5 L91.8 142.6 L88.4 138.7 L89.2 145.6 L96.8 155.3 L101.0 163.2 L160.0 166 L0 166 Z"/></clipPath><clipPath id="bmf"><rect x="0" y="0" width="160" height="166" rx="10"/></clipPath></defs>
+<g clip-path="url(#bmf)">
+<rect width="160" height="166" rx="10" fill="#141210"/>
+<g stroke="rgba(239,233,221,.08)" stroke-width=".6"><line x1="8.4" y1="0" x2="8.4" y2="166"/><line x1="50.5" y1="0" x2="50.5" y2="166"/><line x1="92.6" y1="0" x2="92.6" y2="166"/><line x1="134.7" y1="0" x2="134.7" y2="166"/><line x1="0" y1="141.7" x2="160" y2="141.7"/><line x1="0" y1="92.8" x2="160" y2="92.8"/><line x1="0" y1="44.0" x2="160" y2="44.0"/></g>
+<g clip-path="url(#bmg)" stroke="rgba(239,233,221,.14)" stroke-width=".6"><line x1="-40" y1="166" x2="0" y2="126"/><line x1="-34" y1="166" x2="6" y2="126"/><line x1="-28" y1="166" x2="12" y2="126"/><line x1="-22" y1="166" x2="18" y2="126"/><line x1="-16" y1="166" x2="24" y2="126"/><line x1="-10" y1="166" x2="30" y2="126"/><line x1="-4" y1="166" x2="36" y2="126"/><line x1="2" y1="166" x2="42" y2="126"/><line x1="8" y1="166" x2="48" y2="126"/><line x1="14" y1="166" x2="54" y2="126"/><line x1="20" y1="166" x2="60" y2="126"/><line x1="26" y1="166" x2="66" y2="126"/><line x1="32" y1="166" x2="72" y2="126"/><line x1="38" y1="166" x2="78" y2="126"/><line x1="44" y1="166" x2="84" y2="126"/><line x1="50" y1="166" x2="90" y2="126"/><line x1="56" y1="166" x2="96" y2="126"/><line x1="62" y1="166" x2="102" y2="126"/><line x1="68" y1="166" x2="108" y2="126"/><line x1="74" y1="166" x2="114" y2="126"/><line x1="80" y1="166" x2="120" y2="126"/><line x1="86" y1="166" x2="126" y2="126"/><line x1="92" y1="166" x2="132" y2="126"/><line x1="98" y1="166" x2="138" y2="126"/><line x1="104" y1="166" x2="144" y2="126"/><line x1="110" y1="166" x2="150" y2="126"/><line x1="116" y1="166" x2="156" y2="126"/><line x1="122" y1="166" x2="162" y2="126"/><line x1="128" y1="166" x2="168" y2="126"/><line x1="134" y1="166" x2="174" y2="126"/><line x1="140" y1="166" x2="180" y2="126"/><line x1="146" y1="166" x2="186" y2="126"/><line x1="152" y1="166" x2="192" y2="126"/><line x1="158" y1="166" x2="198" y2="126"/></g>
+<path d="M158.3 155.3 L143.1 151.4 L131.3 153.4 L117.9 151.4 L102.7 147.5 L91.8 142.6 L88.4 138.7 L89.2 145.6 L96.8 155.3 L101.0 163.2" fill="none" stroke="rgba(239,233,221,.45)" stroke-width=".8"/>
+<path d="M132.2 65.5 L118.7 83.0 L107.8 100.6" fill="none" stroke="rgba(255,90,20,.35)" stroke-width=".9"/>
+<path d="M36.2 2.9 L42.1 20.5 L45.5 34.2 L44.6 43.0" fill="none" stroke="rgba(255,90,20,.6)" stroke-width="1.1"/>
+<path d="M4.2 47.9 L18.5 45.9 L32.8 44.0 L44.6 43.0" fill="none" stroke="rgba(255,90,20,.6)" stroke-width="1.1"/>
+<path class="shatt" d="M44.6 43.0 L51.4 55.7 L61.5 69.4 L70.7 81.1 L79.1 89.9 L89.2 95.7 L101.0 99.7 L107.8 102.6 L116.2 109.4 L122.9 122.1 L128.0 134.8 L133.0 144.6 L141.4 151.4" fill="none" stroke="#ff5a14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="44.6" cy="43.0" r="1.6" fill="#efe9dd" opacity=".6"/>
+<circle cx="133.0" cy="144.6" r="1.6" fill="#efe9dd" opacity=".6"/>
+<circle class="ping" cx="76.6" cy="91.8" r="6" fill="none" stroke="#ff5a14" stroke-width="1"/>
+<circle cx="76.6" cy="91.8" r="3.2" fill="#ff5a14"/><circle cx="76.6" cy="91.8" r="1.3" fill="#0a0908"/>
+<line x1="64.6" y1="91.8" x2="71.6" y2="91.8" stroke="#efe9dd" stroke-width=".6"/>
+<text x="62.6" y="95.3" text-anchor="end" fill="#efe9dd" font-family="Cairo,sans-serif" font-size="10" font-weight="600">البصرة</text>
+<g transform="translate(146 14)" fill="none" stroke="rgba(239,233,221,.6)" stroke-width=".8"><circle r="7"/><path d="M0 -5 L2.4 2.5 L0 1 L-2.4 2.5 Z" fill="#efe9dd" stroke="none"/></g>
+<rect x=".5" y=".5" width="159" height="165" rx="10" fill="none" stroke="rgba(239,233,221,.14)"/>
+</g></svg><figcaption>30.51 شمالاً · 47.81 شرقاً</figcaption></figure>
+<p>من البصرة ننطلق برؤية تتجاوز الحدود المحلية، ونبني معايير جديدة في الإبداع والتسويق الرقمي.</p></div>
 </div>
 <div>
 <div class="pair">HMD<b>×</b>SANTOS</div>
-<p style="margin-top:12px">انطلقت ASIRIS من التقاء رؤيتين، لتأسيس كيان يجمع التفكير الاستراتيجي بالجرأة الإبداعية. عقلان، منظوران، وطموح واحد.</p>
+<p style="margin-top:12px">انطلقت ASIRIS من التقاء رؤيتين لتأسيس كيان يجمع التفكير الاستراتيجي بالجرأة الإبداعية.</p>
 </div>
 </div>
 </section>
@@ -137,24 +178,24 @@ html[lang=en] .tags{justify-content:flex-start}
 <section id="services">
 <h2>ماذا نقدم</h2>
 <div class="svc">
-<details><summary><span>الهوية والاستراتيجية<small>Brand Strategy &amp; Identity</small></span></summary>
+<details><summary><span>الهوية والاستراتيجية<small>استراتيجية العلامة وبناء الهوية</small></span></summary>
 <p>نبني العلامة من أساسها بهوية تعكس شخصية المشروع وتبقى متسقة في كل نقطة تواصل.</p>
-<div class="tags"><span>Brand Strategy</span><span>Positioning</span><span>Naming</span><span>Visual Identity</span><span>Guidelines</span><span>Art Direction</span></div></details>
-<details><summary><span>الإبداع والإعلان<small>Creative &amp; Advertising</small></span></summary>
+<div class="tags"><span>استراتيجية العلامة</span><span>التموضع</span><span>التسمية</span><span>الهوية البصرية</span><span>دليل الهوية</span><span>الإدارة الفنية</span></div></details>
+<details><summary><span>الإبداع والإعلان<small>الأفكار والحملات الإعلانية</small></span></summary>
 <p>أفكار إعلانية مبنية على فهم الجمهور والسوق، تتحول إلى حملات تجذب الانتباه.</p>
-<div class="tags"><span>Concepts</span><span>Campaigns</span><span>Creative Direction</span><span>Copywriting</span></div></details>
-<details><summary><span>التسويق الرقمي<small>Digital Marketing</small></span></summary>
+<div class="tags"><span>الأفكار الإبداعية</span><span>الحملات</span><span>الإدارة الإبداعية</span><span>الكتابة الإعلانية</span></div></details>
+<details><summary><span>التسويق الرقمي<small>الحضور والأداء الرقمي</small></span></summary>
 <p>استراتيجيات ومحتوى مدروس يبني حضوراً فعالاً ويقرّب العلامة من جمهورها.</p>
-<div class="tags"><span>Digital Strategy</span><span>Social Media</span><span>Content</span><span>Performance</span></div></details>
-<details><summary><span>الإنتاج الإبداعي<small>Creative Production</small></span></summary>
+<div class="tags"><span>الاستراتيجية الرقمية</span><span>التواصل الاجتماعي</span><span>المحتوى</span><span>التسويق بالأداء</span></div></details>
+<details><summary><span>الإنتاج الإبداعي<small>التصوير والفيديو والموشن</small></span></summary>
 <p>من التصور إلى التنفيذ النهائي: محتوى بصري بقيمة فنية ورسالة واضحة.</p>
-<div class="tags"><span>Photography</span><span>Videography</span><span>Motion Graphics</span><span>Reels</span></div></details>
-<details><summary><span>الإبداع بالذكاء الاصطناعي<small>AI &amp; Next-Gen Creative</small></span></summary>
+<div class="tags"><span>التصوير الفوتوغرافي</span><span>التصوير السينمائي</span><span>الموشن غرافيك</span><span>الريلز</span></div></details>
+<details><summary><span>الإبداع بالذكاء الاصطناعي<small>إبداع الجيل القادم</small></span></summary>
 <p>نوظف الذكاء الاصطناعي لتوسيع الإمكانيات الإبداعية وتطوير طرق الإنتاج.</p>
-<div class="tags"><span>AI Visual Production</span><span>Generative Content</span><span>Automation</span></div></details>
-<details><summary><span>الحلول الرقمية<small>Digital Solutions</small></span></summary>
+<div class="tags"><span>الإنتاج البصري بالذكاء الاصطناعي</span><span>المحتوى التوليدي</span><span>الأتمتة</span></div></details>
+<details><summary><span>الحلول الرقمية<small>المواقع والمنصات والتجارب الرقمية</small></span></summary>
 <p>تجارب رقمية تجمع الوظيفة والجمال وسهولة الاستخدام.</p>
-<div class="tags"><span>Websites</span><span>Web Development</span><span>UI / UX</span><span>Platforms</span></div></details>
+<div class="tags"><span>المواقع الإلكترونية</span><span>تطوير الويب</span><span>تصميم الواجهات وتجربة المستخدم</span><span>المنصات</span></div></details>
 </div>
 </section>
 
@@ -162,23 +203,23 @@ html[lang=en] .tags{justify-content:flex-start}
 <h2>منهجيتنا</h2>
 <p>كل مشروع عندنا يبدأ بسؤال، وليس بتصميم.</p>
 <div class="steps">
-<div class="step"><h3>DISCOVER</h3><span>نفهم المشروع والجمهور والسوق.</span></div>
-<div class="step"><h3>STRATEGIZE</h3><span>نحدد الاتجاه والأهداف.</span></div>
-<div class="step"><h3>CREATE</h3><span>نحوّل الاستراتيجية إلى أفكار وهويات.</span></div>
-<div class="step"><h3>EXECUTE</h3><span>ننفذ وفق معايير احترافية.</span></div>
-<div class="step"><h3>EVOLVE</h3><span>نقيس الأثر ونطوّر العمل باستمرار.</span></div>
+<div class="step"><h3>نكتشف</h3><span>نفهم المشروع والجمهور والسوق.</span></div>
+<div class="step"><h3>نخطّط</h3><span>نحدد الاتجاه والأهداف.</span></div>
+<div class="step"><h3>نبتكر</h3><span>نحوّل الاستراتيجية إلى أفكار وهويات.</span></div>
+<div class="step"><h3>ننفّذ</h3><span>ننفذ وفق معايير احترافية.</span></div>
+<div class="step"><h3>نطوّر</h3><span>نقيس الأثر ونطوّر العمل باستمرار.</span></div>
 </div>
-<div class="quote">We don’t follow trends.<br><em>We create direction.</em></div>
-<div class="vals"><span>Purpose</span><span>Creativity</span><span>Strategy</span><span>Precision</span><span>Integrity</span><span>Evolution</span></div>
+<div class="quote">نحن لا نتبع الموجة.<br><em>نحن نصنع الاتجاه.</em></div>
+<div class="vals"><span>الغاية</span><span>الإبداع</span><span>الاستراتيجية</span><span>الدقة</span><span>النزاهة</span><span>التطوّر</span></div>
 </section>
 
 <section id="work">
 <h2>أعمالنا</h2>
 <p>نعرض كل مشروع كدراسة حالة: التحدي، الفكرة، التنفيذ، النتيجة. المشاريع التصورية تُوسم بوضوح.</p>
 <div class="work">
-<div class="card"><small>CONCEPT · قريباً</small><b>Brand Identity</b></div>
-<div class="card"><small>CONCEPT · قريباً</small><b>Social Campaign</b></div>
-<div class="card"><small>CONCEPT · قريباً</small><b>Web Experience</b></div>
+<div class="card"><small>تصوّر · قريباً</small><b>هوية علامة</b></div>
+<div class="card"><small>تصوّر · قريباً</small><b>حملة اجتماعية</b></div>
+<div class="card"><small>تصوّر · قريباً</small><b>تجربة رقمية</b></div>
 </div>
 </section>
 
@@ -195,7 +236,7 @@ html[lang=en] .tags{justify-content:flex-start}
 <div class='btns'><button class='btn pri' type='submit'>جهّز الطلب</button></div>
 </form>
 <div id='res' hidden>
-<textarea id='msg' readonly rows='8' aria-label='Request'></textarea>
+<textarea id='msg' readonly rows='8' aria-label='الطلب'></textarea>
 <p id='hint'>الصق الرسالة في محادثتنا على تيليغرام بعد فتحها.</p>
 <div class='btns'><a class='btn pri' id='go' href='https://t.me/asiriscreative' target='_blank' rel='noopener'>انسخ الطلب وافتح تيليغرام</a></div>
 <p id='ok' role='status'></p>
@@ -205,12 +246,12 @@ html[lang=en] .tags{justify-content:flex-start}
 <section class="end" id="contact">
 <p class="big"><span>نحن لا نصنع مجرد محتوى.</span><span>نصنع هوية. نخلق رؤية. نبني حضوراً.</span><span>ونحوّل الأفكار إلى أثر.</span></p>
 <div class="btns">
-<a class="btn pri" href="https://www.instagram.com/asiris.creative" target="_blank" rel="noopener" id="ig">Instagram</a>
-<a class="btn" href="https://t.me/asiriscreative" target="_blank" rel="noopener" id="tg">Telegram</a>
+<a class="btn pri" href="https://www.instagram.com/asiris.creative" target="_blank" rel="noopener" id="ig">إنستغرام</a>
+<a class="btn" href="https://t.me/asiriscreative" target="_blank" rel="noopener" id="tg">تيليغرام</a>
 </div>
 </section>
 
-<footer>ASIRIS · CREATIVE &amp; DIGITAL AGENCY · BASRA, IRAQ</footer>
+<footer>ASIRIS · وكالة إبداعية ورقمية · البصرة، العراق</footer>
 
 <script>
 (function(){
@@ -245,7 +286,61 @@ var M={
 "منهجيتنا":"Our approach","كل مشروع عندنا يبدأ بسؤال، وليس بتصميم.":"Every project starts with a question, not a design.",
 "نفهم المشروع والجمهور والسوق.":"We understand the project, the audience and the market.","نحدد الاتجاه والأهداف.":"We set the direction and goals.","نحوّل الاستراتيجية إلى أفكار وهويات.":"We turn strategy into ideas and identities.","ننفذ وفق معايير احترافية.":"We execute to professional standards.","نقيس الأثر ونطوّر العمل باستمرار.":"We measure impact and keep improving the work.",
 "أعمالنا":"Our work","نعرض كل مشروع كدراسة حالة: التحدي، الفكرة، التنفيذ، النتيجة. المشاريع التصورية تُوسم بوضوح.":"Every project is shown as a case study: the challenge, the idea, the execution, the result. Concept projects are clearly labeled.",
-"CONCEPT · قريباً":"CONCEPT · SOON",
+"وكالة إبداعية ورقمية":"CREATIVE & DIGITAL AGENCY",
+"عقلان. إشارة واحدة.":"Two minds. One signal.",
+"نحن لا نتبع الموجة.":"We don’t follow trends.",
+"نحن نصنع الاتجاه.":"We create direction.",
+"تصوّر · قريباً":"CONCEPT · SOON",
+"إنستغرام":"Instagram",
+"تيليغرام":"Telegram",
+"ASIRIS · وكالة إبداعية ورقمية · البصرة، العراق":"ASIRIS · CREATIVE & DIGITAL AGENCY · BASRA, IRAQ",
+"البصرة":"Basra",
+"30.51 شمالاً · 47.81 شرقاً":"30.51° N · 47.81° E",
+"استراتيجية العلامة وبناء الهوية":"Brand Strategy & Identity",
+"الأفكار والحملات الإعلانية":"Creative & Advertising",
+"الحضور والأداء الرقمي":"Digital Marketing",
+"التصوير والفيديو والموشن":"Creative Production",
+"إبداع الجيل القادم":"AI & Next-Gen Creative",
+"المواقع والمنصات والتجارب الرقمية":"Digital Solutions",
+"استراتيجية العلامة":"Brand Strategy",
+"التموضع":"Positioning",
+"التسمية":"Naming",
+"الهوية البصرية":"Visual Identity",
+"دليل الهوية":"Guidelines",
+"الإدارة الفنية":"Art Direction",
+"الأفكار الإبداعية":"Concepts",
+"الحملات":"Campaigns",
+"الإدارة الإبداعية":"Creative Direction",
+"الكتابة الإعلانية":"Copywriting",
+"الاستراتيجية الرقمية":"Digital Strategy",
+"التواصل الاجتماعي":"Social Media",
+"المحتوى":"Content",
+"التسويق بالأداء":"Performance",
+"التصوير الفوتوغرافي":"Photography",
+"التصوير السينمائي":"Videography",
+"الموشن غرافيك":"Motion Graphics",
+"الريلز":"Reels",
+"الإنتاج البصري بالذكاء الاصطناعي":"AI Visual Production",
+"المحتوى التوليدي":"Generative Content",
+"الأتمتة":"Automation",
+"المواقع الإلكترونية":"Websites",
+"تطوير الويب":"Web Development",
+"تصميم الواجهات وتجربة المستخدم":"UI / UX",
+"المنصات":"Platforms",
+"نكتشف":"DISCOVER",
+"نخطّط":"STRATEGIZE",
+"نبتكر":"CREATE",
+"ننفّذ":"EXECUTE",
+"نطوّر":"EVOLVE",
+"الغاية":"Purpose",
+"الإبداع":"Creativity",
+"الاستراتيجية":"Strategy",
+"الدقة":"Precision",
+"النزاهة":"Integrity",
+"التطوّر":"Evolution",
+"هوية علامة":"Brand Identity",
+"حملة اجتماعية":"Social Campaign",
+"تجربة رقمية":"Web Experience",
 'أخبرنا عن فكرتك، نجهّز لك الطلب وترسله لنا مباشرة على تيليغرام.':'Tell us about your idea. We prepare the request and you send it to us directly on Telegram.',
 'الاسم':'Name','الخدمة المطلوبة':'Service needed','الميزانية التقريبية':'Approximate budget','الموعد المطلوب':'Timeline','وصف المشروع':'Project description',
 'أقل من 500 دولار':'Under $500','من 500 إلى 1500 دولار':'$500 to $1,500','أكثر من 1500 دولار':'Over $1,500','لست متأكداً بعد':'Not sure yet',
@@ -306,6 +401,173 @@ try{ta.select();ta.setSelectionRange(0,99999);d.execCommand('copy')}catch(e){}
 try{navigator.clipboard.writeText(ta.value)}catch(e){}
 d.getElementById('ok').textContent=tt().ok;
 });
+})();
+</script>
+<script>
+/* ASIRIS — living background: two minds, one signal.
+   Two light sources (ivory and signal orange) pull a field of particles into orbit.
+   Physics: gravity + orbital swirl, gentle flow field, particle separation, damping.
+   Interaction: the pointer is a gravity well that drags the field; a tap or click sends a
+   shockwave; scrolling gives the field inertia; tilting a phone shifts gravity. */
+(function(){
+var cv=document.getElementById('bgfx');if(!cv||!cv.getContext)return;
+var ctx=cv.getContext('2d',{alpha:false});
+var RM=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var C={bg:'rgb(10,9,8)',iv:'239,233,221',or:'255,90,20',mu:'165,159,147'};
+var W=0,H=0,DPR=1,P=[],raf=0,T=0,last=0;
+var ptr={x:-9999,y:-9999,vx:0,vy:0,on:false,idle:0},waves=[],scrollV=0,lastY=window.scrollY,tilt={x:0,y:0};
+var minds=[{x:0,y:0,c:'iv',g:1500},{x:0,y:0,c:'or',g:1900}];
+/* opening: the field is born in Basra. A large schematic map of the city and Shatt al-Arab
+   is drawn behind the logo, and every particle bursts out of Basra, rides the shock and is
+   then caught by the two minds. It plays once, when the page opens. */
+var MAP={"TIGRIS": [[31.42, 47.33], [31.24, 47.4], [31.1, 47.44], [31.01, 47.43]], "EUPHR": [[30.96, 46.95], [30.98, 47.12], [31.0, 47.29], [31.01, 47.43]], "SHATT": [[31.01, 47.43], [30.88, 47.51], [30.74, 47.63], [30.62, 47.74], [30.53, 47.84], [30.47, 47.96], [30.43, 48.1], [30.4, 48.18], [30.33, 48.28], [30.2, 48.36], [30.07, 48.42], [29.97, 48.48], [29.9, 48.58]], "KARUN": [[30.78, 48.47], [30.6, 48.31], [30.42, 48.18]], "COAST": [[29.86, 48.78], [29.9, 48.6], [29.88, 48.46], [29.9, 48.3], [29.94, 48.12], [29.99, 47.99], [30.03, 47.95], [29.96, 47.96], [29.86, 48.05], [29.78, 48.1]], "BASRA": [30.51, 47.81]};
+var intro=RM?null:{t0:null,ax:0,ay:0,S:1};
+function sm(x){x=x<0?0:x>1?1:x;return x*x*(3-2*x)}
+function pr(t,a,b){return Math.max(0,Math.min(1,(t-a)/(b-a)))}
+function mp(ll){var c=0.8616;return[intro.ax+(ll[1]-MAP.BASRA[1])*c*intro.S,intro.ay-(ll[0]-MAP.BASRA[0])*intro.S]}
+function anchor(){
+  var m=document.querySelector('.hero .mark'),r=m&&m.getBoundingClientRect();
+  intro.mh=r&&r.height||0;if(r&&r.width&&r.bottom>0&&r.top<H){intro.ax=r.left+r.width/2;intro.ay=r.top+r.height/2}else{intro.ax=W/2;intro.ay=H*.42}
+  intro.S=Math.min(W,H)*.62;
+}
+function launch(now){
+  intro.t0=now;anchor();
+  var sh=MAP.SHATT.map(mp);
+  for(var i=0;i<P.length;i++){var p=P[i];
+    if(i%4===0){var k=Math.floor(Math.random()*(sh.length-1)),u=Math.random(),a=sh[k],b=sh[k+1],tx=b[0]-a[0],ty=b[1]-a[1],tl=Math.hypot(tx,ty)||1,sg=Math.random()<.5?-1:1,sp=rnd(.6,4.5);
+      p.x=a[0]+tx*u;p.y=a[1]+ty*u;p.vx=-ty/tl*sp*sg+tx/tl*rnd(-1,1);p.vy=tx/tl*sp*sg+ty/tl*rnd(-1,1)}
+    else{var an=Math.random()*6.283,v=Math.pow(Math.random(),.6)*12+.8,r0=Math.random()*8;
+      p.x=intro.ax+Math.cos(an)*r0;p.y=intro.ay+Math.sin(an)*r0;p.vx=Math.cos(an)*v;p.vy=Math.sin(an)*v}}
+  waves.push({x:intro.ax,y:intro.ay,t0:now});waves.push({x:intro.ax,y:intro.ay,t0:now+220});
+}
+function drawMap(age){
+  var a=Math.min(pr(age,0,320),1-pr(age,1300,3200));if(a<=0)return;
+  var S=intro.S,c=0.8616;
+  ctx.lineCap='round';ctx.lineJoin='round';
+  ctx.strokeStyle='rgba('+C.iv+','+(.07*a)+')';ctx.lineWidth=1;            // coordinate grid, every half degree
+  for(var lo=46.5;lo<=49.01;lo+=.5){var x=mp([30,lo])[0];ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke()}
+  for(var la=29.5;la<=31.51;la+=.5){var y=mp([la,47])[1];ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke()}
+  function line(pts,col,al,lw,prog){var q=pts.map(mp),L=0,seg=[];for(var i=1;i<q.length;i++){var l=Math.hypot(q[i][0]-q[i-1][0],q[i][1]-q[i-1][1]);seg.push(l);L+=l}
+    var lim=L*(prog==null?1:prog);ctx.strokeStyle='rgba('+col+','+al+')';ctx.lineWidth=lw;ctx.beginPath();ctx.moveTo(q[0][0],q[0][1]);
+    for(i=1;i<q.length&&lim>0;i++){var f=Math.min(1,lim/seg[i-1]);ctx.lineTo(q[i-1][0]+(q[i][0]-q[i-1][0])*f,q[i-1][1]+(q[i][1]-q[i-1][1])*f);lim-=seg[i-1]}ctx.stroke()}
+  line(MAP.COAST,C.iv,.35*a,1.2);
+  line(MAP.KARUN,C.or,.25*a,1.2,sm(pr(age,150,1100)));
+  line(MAP.TIGRIS,C.or,.45*a,1.6,sm(pr(age,0,700)));
+  line(MAP.EUPHR,C.or,.45*a,1.6,sm(pr(age,0,700)));
+  line(MAP.SHATT,C.or,.85*a,3,sm(pr(age,0,1000)));
+  var b=[intro.ax,intro.ay],fl=Math.exp(-age/260);
+  glow(b[0],b[1],S*.35,C.or,.5*fl+.08*a);
+  ctx.fillStyle='rgba('+C.iv+','+a+')';ctx.beginPath();ctx.arc(b[0],b[1],3.5,0,6.283);ctx.fill();
+  ctx.font='600 15px Cairo,sans-serif';ctx.textAlign='right';ctx.textBaseline='middle';ctx.direction='rtl';
+  var cap='30.51 شمالاً · 47.81 شرقاً';ctx.font='500 11px Cairo,sans-serif';var cw=ctx.measureText(cap).width;
+  var lx=Math.max(16+cw,b[0]-S*.36),ly=b[1]+S*.05;
+  if(W<700){lx=b[0]+cw/2;ly=b[1]-intro.mh*.5-44}             // narrow screens: above the logo, not behind it
+  ctx.font='600 15px Cairo,sans-serif';ctx.fillStyle='rgba('+C.iv+','+(.75*a*pr(age,250,700))+')';ctx.fillText('البصرة',lx,ly);
+  ctx.font='500 11px Cairo,sans-serif';ctx.fillStyle='rgba('+C.mu+','+(.8*a*pr(age,400,900))+')';ctx.fillText(cap,lx,ly+20);
+  ctx.direction='ltr';ctx.textAlign='start';
+}
+function rnd(a,b){return a+Math.random()*(b-a)}
+function make(){var r=Math.random();return{x:rnd(0,W),y:rnd(0,H),vx:rnd(-.3,.3),vy:rnd(-.3,.3),m:rnd(.6,2.1),c:r<.66?'iv':r<.92?'or':'mu',a:rnd(.25,.8),ph:rnd(0,6.283)}}
+function size(){
+  DPR=Math.min(window.devicePixelRatio||1,1.5);W=window.innerWidth;H=window.innerHeight;
+  cv.width=Math.round(W*DPR);cv.height=Math.round(H*DPR);ctx.setTransform(DPR,0,0,DPR,0,0);
+  var n=Math.round(Math.max(150,Math.min(480,W*H/3000)));
+  while(P.length<n)P.push(make());P.length=n;
+  P.forEach(function(p){if(p.x>W+60||p.y>H+60){p.x=rnd(0,W);p.y=rnd(0,H)}});
+}
+function placeMinds(t){
+  var s=Math.min(W,H),y0=H*.46,k=Math.min(window.scrollY,1400)/1400;
+  var sep=s*(.16+.07*Math.sin(t*.00013))+W*.10*k;          // the two minds meet and part, and drift apart as you scroll
+  var ox=Math.sin(t*.00007)*W*.06,oy=Math.cos(t*.00005)*H*.08;
+  minds[0].x=W/2-sep+ox;minds[0].y=y0+oy+Math.sin(t*.00011)*s*.05;
+  minds[1].x=W/2+sep+ox;minds[1].y=y0+oy-Math.sin(t*.00011)*s*.05;
+}
+var grid=new Map(),CELL=60;
+function step(dt,t){
+  placeMinds(t);
+  var age=intro&&intro.t0!=null?t-intro.t0:1e9,ramp=intro?sm(pr(age,450,2900)):1,damp=age<1600?.972:.986;
+  if(intro&&age>4000)intro=null;
+  grid.clear();
+  for(var i=0;i<P.length;i++){var p=P[i],k=((p.x/CELL)|0)+','+((p.y/CELL)|0);var b=grid.get(k);if(b)b.push(i);else grid.set(k,[i])}
+  var f=dt/16.67,swirl=.85,soft=110*110;
+  for(var w=waves.length-1;w>=0;w--){if(t-waves[w].t0>1600)waves.splice(w,1)}
+  for(i=0;i<P.length;i++){
+    p=P[i];var ax=0,ay=0;
+    for(var j=0;j<2;j++){                                     // gravity + orbit around each mind
+      var m=minds[j],dx=m.x-p.x,dy=m.y-p.y,d2=dx*dx+dy*dy+soft,inv=1/Math.sqrt(d2);
+      var g=ramp*m.g*(p.c===m.c?1:.4)/d2,d=Math.sqrt(d2);
+      if(d<140){g-=.035*(1-d/140)}                              // a soft core keeps particles from collapsing in
+      ax+=dx*inv*g;ay+=dy*inv*g;ax+=-dy*inv*g*swirl*(j?1:-1);ay+=dx*inv*g*swirl*(j?1:-1);
+    }
+    ax+=ramp*Math.sin(p.y*.0045+t*.0003+p.ph*.2)*.006;ay+=ramp*Math.cos(p.x*.0042+t*.00026)*.006;   // flow field
+    var px=p.x-ptr.x,py=p.y-ptr.y,pd=Math.sqrt(px*px+py*py);
+    if(ptr.on&&pd<190){var q=1-pd/190;                          // pointer: drag with its motion, gentle gravity when still
+      p.vx+=ptr.vx*.05*q*f;p.vy+=ptr.vy*.05*q*f;
+      ax-=px/(pd+1)*.05*q;ay-=py/(pd+1)*.05*q;ax+=py/(pd+1)*.04*q;ay-=px/(pd+1)*.04*q}
+    for(w=0;w<waves.length;w++){var wv=waves[w],age=t-wv.t0;if(age<0)continue;var rr=age*.75,wx=p.x-wv.x,wy=p.y-wv.y,wd=Math.sqrt(wx*wx+wy*wy)+.01;
+      if(Math.abs(wd-rr)<46){var s=(1-age/1600)*1.1*(1-Math.abs(wd-rr)/46)/p.m;ax+=wx/wd*s;ay+=wy/wd*s}}
+    ay-=scrollV*.012/p.m;ax+=tilt.x*.012;ay+=tilt.y*.012;      // scroll inertia, device tilt
+    var cx=(p.x/CELL)|0,cy=(p.y/CELL)|0;                         // separation between neighbours
+    for(var gx=-1;gx<=1;gx++)for(var gy=-1;gy<=1;gy++){var bb=grid.get((cx+gx)+','+(cy+gy));if(!bb)continue;
+      for(var n=0;n<bb.length;n++){var o=P[bb[n]];if(o===p)continue;var sx=p.x-o.x,sy=p.y-o.y,sd=sx*sx+sy*sy;
+        if(sd<576&&sd>.01){sd=Math.sqrt(sd);var sp=.03*(1-sd/24);ax+=sx/sd*sp;ay+=sy/sd*sp}}}
+    p.vx=(p.vx+ax*f)*Math.pow(damp,f);p.vy=(p.vy+ay*f)*Math.pow(damp,f);
+    var sp2=p.vx*p.vx+p.vy*p.vy,vmax=age<1200?14:4.47;if(sp2>vmax*vmax){var sc=vmax/Math.sqrt(sp2);p.vx*=sc;p.vy*=sc}
+    p.x+=p.vx*f;p.y+=p.vy*f;
+    if(p.x<-50)p.x=W+50;else if(p.x>W+50)p.x=-50;if(p.y<-50)p.y=H+50;else if(p.y>H+50)p.y=-50;
+  }
+  scrollV*=Math.pow(.9,f);ptr.vx*=Math.pow(.85,f);ptr.vy*=Math.pow(.85,f);
+}
+function glow(x,y,r,rgb,a){var g=ctx.createRadialGradient(x,y,0,x,y,r);g.addColorStop(0,'rgba('+rgb+','+a+')');g.addColorStop(.45,'rgba('+rgb+','+(a*.3)+')');g.addColorStop(1,'rgba('+rgb+',0)');ctx.fillStyle=g;ctx.fillRect(x-r,y-r,r*2,r*2)}
+function draw(t){
+  ctx.globalCompositeOperation='source-over';ctx.fillStyle=C.bg;ctx.fillRect(0,0,W,H);
+  var s=Math.min(W,H);
+  ctx.globalCompositeOperation='lighter';
+  var age=intro&&intro.t0!=null?t-intro.t0:1e9,mk=intro?sm(pr(age,600,2600)):1;
+  glow(minds[0].x,minds[0].y,s*.55,C.iv,.045*mk);glow(minds[1].x,minds[1].y,s*.62,C.or,.11*mk);
+  if(intro&&intro.t0!=null)drawMap(age);
+  if(ptr.on)glow(ptr.x,ptr.y,170,C.or,.05);
+  // constellation lines between close particles
+  ctx.lineWidth=.6;
+  for(var i=0;i<P.length;i++){var p=P[i],cx=(p.x/CELL)|0,cy=(p.y/CELL)|0;
+    for(var gx=0;gx<=1;gx++)for(var gy=-1;gy<=1;gy++){if(gx===0&&gy<0)continue;var bb=grid.get((cx+gx)+','+(cy+gy));if(!bb)continue;
+      for(var n=0;n<bb.length;n++){var o=P[bb[n]];if(o===p||(gx===0&&gy===0&&bb[n]<=i))continue;var dx=p.x-o.x,dy=p.y-o.y,d2=dx*dx+dy*dy;
+        if(d2<3600){var a=(1-d2/3600)*.11;ctx.strokeStyle='rgba('+(p.c==='or'&&o.c==='or'?C.or:C.iv)+','+a+')';ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(o.x,o.y);ctx.stroke()}}}}
+  // particles with motion streaks
+  for(i=0;i<P.length;i++){p=P[i];var al=p.a*(.65+.35*Math.sin(t*.0012+p.ph)),rgb=C[p.c],v2=p.vx*p.vx+p.vy*p.vy;
+    if(v2>.5){ctx.strokeStyle='rgba('+rgb+','+(al*.55)+')';ctx.lineWidth=p.m*.9;ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(p.x-p.vx*4,p.y-p.vy*4);ctx.stroke()}
+    ctx.fillStyle='rgba('+rgb+','+al+')';ctx.beginPath();ctx.arc(p.x,p.y,p.m*.75,0,6.283);ctx.fill()}
+  // shockwaves
+  for(var w=0;w<waves.length;w++){var wv=waves[w],age=t-wv.t0,k=1-age/1600;if(k<=0||age<0)continue;
+    ctx.strokeStyle='rgba('+C.or+','+(k*.32)+')';ctx.lineWidth=1.2;ctx.beginPath();ctx.arc(wv.x,wv.y,age*.75,0,6.283);ctx.stroke()}
+  // edge vignette keeps the copy readable
+  ctx.globalCompositeOperation='source-over';
+  var vg=ctx.createRadialGradient(W/2,H/2,s*.25,W/2,H/2,Math.hypot(W,H)*.62);vg.addColorStop(0,'rgba(10,9,8,0)');vg.addColorStop(1,'rgba(10,9,8,.62)');
+  ctx.fillStyle=vg;ctx.fillRect(0,0,W,H);
+}
+function loop(now){
+  var dt=Math.min(40,last?now-last:16.67);last=now;T=now;
+  if(intro&&intro.t0==null)launch(now);
+  step(dt,now);draw(now);raf=requestAnimationFrame(loop);
+}
+function start(){if(!raf&&!RM){last=0;raf=requestAnimationFrame(loop)}}
+function stop(){if(raf){cancelAnimationFrame(raf);raf=0}}
+size();
+if(RM){placeMinds(0);for(var k=0;k<120;k++)step(16.67,k*16.67);draw(0)}else start();
+window.addEventListener('resize',function(){size();if(RM){placeMinds(0);draw(0)}});
+document.addEventListener('visibilitychange',function(){document.hidden?stop():start()});
+function move(x,y){if(ptr.on){ptr.vx=ptr.vx*.5+(x-ptr.x)*.5;ptr.vy=ptr.vy*.5+(y-ptr.y)*.5}ptr.x=x;ptr.y=y;ptr.on=true}
+window.addEventListener('pointermove',function(e){move(e.clientX,e.clientY)},{passive:true});
+window.addEventListener('touchmove',function(e){var t=e.touches[0];if(t)move(t.clientX,t.clientY)},{passive:true});
+document.documentElement.addEventListener('pointerleave',function(){ptr.on=false});
+window.addEventListener('touchend',function(){setTimeout(function(){ptr.on=false},600)},{passive:true});
+window.addEventListener('pointerdown',function(e){
+  if(e.target.closest&&e.target.closest('input,select,textarea,label'))return;
+  waves.push({x:e.clientX,y:e.clientY,t0:T||performance.now()});if(waves.length>5)waves.shift();
+  if(RM){draw(0)}
+},{passive:true});
+window.addEventListener('scroll',function(){var y=window.scrollY;scrollV+=Math.max(-40,Math.min(40,y-lastY))*.25;lastY=y},{passive:true});
+window.addEventListener('deviceorientation',function(e){if(e.gamma==null)return;tilt.x=Math.max(-1,Math.min(1,e.gamma/45));tilt.y=Math.max(-1,Math.min(1,(e.beta-35)/45))},{passive:true});
 })();
 </script>
 </body>
