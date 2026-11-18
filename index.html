@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>ASIRIS | Creative & Digital Agency</title>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;800&family=Montserrat:wght@500;800&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('boot')</script>
 <style>
 :root{--bg:#0a0908;--bg2:#141210;--ivory:#efe9dd;--mute:#a59f93;--or:#ff5a14;--line:rgba(239,233,221,.14);
 box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
@@ -19,7 +20,7 @@ h2{font:800 clamp(28px,6vw,48px)/1.3 "Cairo",sans-serif;margin:0 0 20px}
 p{margin:0 0 16px;color:var(--mute);max-width:62ch}
 .hero{min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;max-width:none;padding:60px 22px}
 .hero::before{content:"";position:absolute;width:min(90vw,620px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(255,90,20,.22),transparent 68%);top:50%;left:50%;transform:translate(-50%,-62%);pointer-events:none}
-.mark{width:min(78vw,400px);height:auto;position:relative}
+.mark{width:min(78vw,400px);height:auto;position:relative;overflow:visible}
 .logo{font:800 clamp(44px,12vw,92px)/1 "Montserrat",sans-serif;letter-spacing:.03em;margin:8px 0 10px;position:relative}
 .sub{font:500 13px/1.6 "Montserrat",sans-serif;letter-spacing:.34em;color:var(--mute);margin:0 0 6px}
 .sig{font:300 18px/1.6 "Montserrat",sans-serif;letter-spacing:.12em;color:var(--ivory);margin:0 0 34px}
@@ -60,20 +61,25 @@ details p{margin:12px 0 10px;font-size:15px}
 .end .big span{display:block}.end .big span:last-child{color:var(--or)}
 footer{border-top:1px solid var(--line);text-align:center;padding:30px 22px 40px;color:var(--mute);font:500 12px "Montserrat",sans-serif;letter-spacing:.2em}
 .hero{isolation:isolate}
-.fx{position:absolute;inset:0;overflow:hidden;z-index:-1;pointer-events:none}
+.fx{position:absolute;inset:0;overflow:hidden;z-index:-1;pointer-events:none;-webkit-mask-image:linear-gradient(#000 62%,transparent);mask-image:linear-gradient(#000 62%,transparent)}
 .fx::before{content:'';position:absolute;left:50%;top:45%;width:170vmax;height:170vmax;margin:-85vmax 0 0 -85vmax;background:conic-gradient(from 0deg,transparent 0 306deg,rgba(255,90,20,.16) 336deg,transparent 360deg);-webkit-mask-image:radial-gradient(circle,#000,transparent 42%);mask-image:radial-gradient(circle,#000,transparent 42%);animation:sw 26s linear infinite}
 .fx::after{content:'';position:absolute;inset:0;opacity:.07;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='.5'/></svg>")}
 @keyframes sw{to{transform:rotate(360deg)}}
-.dv{display:flex;justify-content:center;height:24px;direction:ltr;margin:0 auto}
-.dv i{width:22px;height:22px;border-radius:50%;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
-.dv i:first-child{background:var(--ivory);transform:translateX(-80px)}
-.dv i:last-child{background:var(--or);opacity:.92;transform:translateX(80px)}
-.dv.on i:first-child{transform:translateX(5px)}
-.dv.on i:last-child{transform:translateX(-5px)}
+.dv{display:flex;align-items:center;justify-content:center;gap:16px;height:28px;max-width:1040px;margin:0 auto;padding:0 22px;direction:ltr}
+.hero+.dv{margin-top:40px}
+.dv svg{flex:none;display:block;width:64px;height:28px;overflow:visible;opacity:0;transition:opacity .5s ease}
+.dv .ln{flex:0 1 140px;height:1px;background:linear-gradient(to left,rgba(239,233,221,.26),rgba(239,233,221,0));transform:scaleX(0);transform-origin:right center;transition:transform 1.2s cubic-bezier(.2,.7,.2,1) .25s}
+.dv .ln:last-child{background:linear-gradient(to right,rgba(239,233,221,.26),rgba(239,233,221,0));transform-origin:left center}
+.dv.on svg{opacity:1}
+.dv.on .ln{transform:scaleX(1)}
 .cur{position:fixed;left:0;top:0;width:34px;height:34px;margin:-17px 0 0 -17px;border:1.5px solid var(--or);border-radius:50%;pointer-events:none;z-index:9;opacity:0;transition:width .25s,height .25s,margin .25s,background .25s,opacity .25s}
 .cur.on{opacity:1}
 .cur.big{width:64px;height:64px;margin:-32px 0 0 -32px;background:rgba(255,90,20,.12)}
 [hidden]{display:none!important}
+.hero .logo,.hero .sub,.hero .sig,.hero .btns{transition:opacity .9s ease,transform 1s cubic-bezier(.2,.7,.2,1)}
+.hero .sub{transition-delay:.1s}.hero .sig{transition-delay:.18s}.hero .btns{transition-delay:.28s}
+html.boot .hero .logo,html.boot .hero .sub,html.boot .hero .sig,html.boot .hero .btns{opacity:0;transform:translateY(12px)}
+@media(prefers-reduced-motion:reduce){html.boot .hero .logo,html.boot .hero .sub,html.boot .hero .sig,html.boot .hero .btns{opacity:1;transform:none}}
 html[lang=ar] .sub,html[lang=ar] .sig,html[lang=ar] summary small,html[lang=ar] .tags span,html[lang=ar] .step h3,html[lang=ar] .card small,html[lang=ar] .card b,html[lang=ar] .vals,html[lang=ar] footer,html[lang=ar] .quote{font-family:"Cairo",sans-serif;letter-spacing:0}
 html[lang=ar] .sub{font-size:15px;font-weight:600}
 html[lang=ar] .sig{font-size:19px;font-weight:400}
@@ -123,17 +129,17 @@ html[lang=en] .tags{justify-content:flex-start}
 <header class="hero" id="top"><div class="fx" aria-hidden="true"></div>
 <svg class="mark" viewBox="0 0 400 240" role="img" aria-label="ASIRIS">
 <defs>
-<clipPath id="cp"><circle id="cc" cx="150" cy="120" r="100"/></clipPath>
+<clipPath id="cp"><circle id="cc" cx="30" cy="120" r="100"/></clipPath>
 <filter id="gl" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="14"/></filter>
 </defs>
-<circle id="gb" cx="250" cy="120" r="100" fill="#ff5a14" opacity=".45" filter="url(#gl)"/>
-<circle id="ca" cx="150" cy="120" r="100" fill="#efe9dd"/>
-<circle id="cb" cx="250" cy="120" r="100" fill="#ff5a14"/>
-<circle id="cl" cx="250" cy="120" r="100" fill="#0a0908" clip-path="url(#cp)"/>
+<circle id="gb" cx="370" cy="120" r="100" fill="#ff5a14" opacity=".45" filter="url(#gl)"/>
+<circle id="ca" cx="30" cy="120" r="100" fill="#efe9dd"/>
+<circle id="cb" cx="370" cy="120" r="100" fill="#ff5a14"/>
+<circle id="cl" cx="370" cy="120" r="100" fill="#0a0908" clip-path="url(#cp)"/>
 </svg>
 <h1 class="logo">ASIRIS</h1>
 <p class="sub">وكالة إبداعية ورقمية</p>
-<p class="sig"></p>
+<p class="sig">عقلان. إشارة واحدة.</p>
 <div class="btns">
 <a class="btn pri" href="#work">شاهد أعمالنا</a>
 <a class="btn" href="#start">ابدأ مشروعك</a>
@@ -145,7 +151,7 @@ html[lang=en] .tags{justify-content:flex-start}
 <p class="lead">وكالة إبداعية متكاملة تعمل عند تقاطع الاستراتيجية والإبداع والتكنولوجيا والتسويق الرقمي.</p>
 <div class="cols">
 <div>
-<p>العلامات القوية لا تُبنى بالمظهر وحده بل برؤية واضحة وفهم عميق للجمهور واستراتيجية تحوّل الأفكار إلى قيمة والحضور إلى تأثير.</p>
+<p>العلامات القوية لا تُبنى بالمظهر وحده، بل برؤية واضحة وفهم عميق للجمهور واستراتيجية تحوّل الأفكار إلى قيمة والحضور إلى تأثير.</p>
 <div class="basra"><figure><svg class="bmap" viewBox="0 0 160 166" role="img" aria-label="خارطة تخطيطية للبصرة وشط العرب">
 <defs><clipPath id="bmg"><path d="M158.3 155.3 L143.1 151.4 L131.3 153.4 L117.9 151.4 L102.7 147.5 L91.8 142.6 L88.4 138.7 L89.2 145.6 L96.8 155.3 L101.0 163.2 L160.0 166 L0 166 Z"/></clipPath><clipPath id="bmf"><rect x="0" y="0" width="160" height="166" rx="10"/></clipPath></defs>
 <g clip-path="url(#bmf)">
@@ -170,7 +176,7 @@ html[lang=en] .tags{justify-content:flex-start}
 </div>
 <div>
 <div class="pair">HMD<b>×</b>SANTOS</div>
-<p style="margin-top:12px">انطلقت ASIRIS من التقاء رؤيتين لتأسيس كيان يجمع التفكير الاستراتيجي بالجرأة الإبداعية.</p>
+<p style="margin-top:12px">انطلقت ASIRIS من التقاء رؤيتين، لتأسيس كيان يجمع التفكير الاستراتيجي بالجرأة الإبداعية. عقلان، منظوران، وطموح واحد.</p>
 </div>
 </div>
 </section>
@@ -368,9 +374,18 @@ btn.textContent=en?"عربي":"EN";
 (function(){
 var d=document,h=d.documentElement,R=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 var dv=[];
-d.querySelectorAll('section').forEach(function(s){var e=d.createElement('div');e.className='dv';e.setAttribute('aria-hidden','true');e.innerHTML='<i></i><i></i>';s.parentNode.insertBefore(e,s);dv.push(e)});
+var R0=10,GAP=R0*.62,FAR=30;                                   // same proportions as the main mark (r 100, centres ±62)
+function dvSet(e,x){e._c.forEach(function(c){c.setAttribute('cx',c.getAttribute('data-s')==='a'?-x:x)})}
+function dvSpring(e){                                            // damped spring: the two circles snap together and settle
+  var x=FAR,v=0,lt=0;function f(t){var dt=lt?Math.min(.034,(t-lt)/1000):.016;lt=t;
+    var a=-210*(x-GAP)-17*v;v+=a*dt;x+=v*dt;dvSet(e,x);
+    if(Math.abs(x-GAP)>.02||Math.abs(v)>.02)requestAnimationFrame(f);else dvSet(e,GAP)}
+  requestAnimationFrame(f)}
+d.querySelectorAll('section').forEach(function(s,i){var e=d.createElement('div');e.className='dv';e.setAttribute('aria-hidden','true');
+  e.innerHTML='<span class="ln"></span><svg viewBox="-32 -14 64 28"><defs><clipPath id="dvc'+i+'"><circle data-s="a" r="'+R0+'"/></clipPath></defs><circle data-s="a" r="'+R0+'" fill="#efe9dd"/><circle data-s="b" r="'+R0+'" fill="#ff5a14"/><circle data-s="b" r="'+R0+'" fill="#0a0908" clip-path="url(#dvc'+i+')"/></svg><span class="ln"></span>';
+  e._c=[].slice.call(e.querySelectorAll('circle'));dvSet(e,R?GAP:FAR);s.parentNode.insertBefore(e,s);dv.push(e)});
 if(R||!('IntersectionObserver' in window)){dv.forEach(function(e){e.classList.add('on')})}
-else{var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('on');io.unobserve(x.target)}})},{threshold:.6});dv.forEach(function(e){io.observe(e)})}
+else{var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('on');dvSpring(x.target);io.unobserve(x.target)}})},{threshold:.6});dv.forEach(function(e){io.observe(e)})}
 if(!R&&window.matchMedia('(hover: hover) and (pointer: fine)').matches){
 var c=d.createElement('div');c.className='cur';d.body.appendChild(c);
 var x=0,y=0,tx=0,ty=0,go=false;
@@ -402,6 +417,11 @@ try{navigator.clipboard.writeText(ta.value)}catch(e){}
 d.getElementById('ok').textContent=tt().ok;
 });
 })();
+</script>
+<script>
+(function(){var h=document.documentElement,t0=performance.now(),done=false;
+function go(){if(done)return;done=true;var w=Math.max(0,550-(performance.now()-t0));setTimeout(function(){h.classList.remove('boot')},w)}
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(go);setTimeout(go,1400)})();
 </script>
 <script>
 /* ASIRIS — living background: two minds, one signal.
@@ -436,7 +456,7 @@ function launch(now){
   for(var i=0;i<P.length;i++){var p=P[i];
     if(i%4===0){var k=Math.floor(Math.random()*(sh.length-1)),u=Math.random(),a=sh[k],b=sh[k+1],tx=b[0]-a[0],ty=b[1]-a[1],tl=Math.hypot(tx,ty)||1,sg=Math.random()<.5?-1:1,sp=rnd(.6,4.5);
       p.x=a[0]+tx*u;p.y=a[1]+ty*u;p.vx=-ty/tl*sp*sg+tx/tl*rnd(-1,1);p.vy=tx/tl*sp*sg+ty/tl*rnd(-1,1)}
-    else{var an=Math.random()*6.283,v=Math.pow(Math.random(),.6)*12+.8,r0=Math.random()*8;
+    else{var an=Math.random()*6.283,v=Math.pow(Math.random(),.6)*11+.8,r0=6+Math.random()*34;
       p.x=intro.ax+Math.cos(an)*r0;p.y=intro.ay+Math.sin(an)*r0;p.vx=Math.cos(an)*v;p.vy=Math.sin(an)*v}}
   waves.push({x:intro.ax,y:intro.ay,t0:now});waves.push({x:intro.ax,y:intro.ay,t0:now+220});
 }
@@ -509,7 +529,7 @@ function step(dt,t){
     ay-=scrollV*.012/p.m;ax+=tilt.x*.012;ay+=tilt.y*.012;      // scroll inertia, device tilt
     var cx=(p.x/CELL)|0,cy=(p.y/CELL)|0;                         // separation between neighbours
     for(var gx=-1;gx<=1;gx++)for(var gy=-1;gy<=1;gy++){var bb=grid.get((cx+gx)+','+(cy+gy));if(!bb)continue;
-      for(var n=0;n<bb.length;n++){var o=P[bb[n]];if(o===p)continue;var sx=p.x-o.x,sy=p.y-o.y,sd=sx*sx+sy*sy;
+      for(var n=0;n<bb.length&&n<10;n++){var o=P[bb[n]];if(o===p)continue;var sx=p.x-o.x,sy=p.y-o.y,sd=sx*sx+sy*sy;
         if(sd<576&&sd>.01){sd=Math.sqrt(sd);var sp=.03*(1-sd/24);ax+=sx/sd*sp;ay+=sy/sd*sp}}}
     p.vx=(p.vx+ax*f)*Math.pow(damp,f);p.vy=(p.vy+ay*f)*Math.pow(damp,f);
     var sp2=p.vx*p.vx+p.vy*p.vy,vmax=age<1200?14:4.47;if(sp2>vmax*vmax){var sc=vmax/Math.sqrt(sp2);p.vx*=sc;p.vy*=sc}
@@ -525,14 +545,14 @@ function draw(t){
   ctx.globalCompositeOperation='lighter';
   var age=intro&&intro.t0!=null?t-intro.t0:1e9,mk=intro?sm(pr(age,600,2600)):1;
   glow(minds[0].x,minds[0].y,s*.55,C.iv,.045*mk);glow(minds[1].x,minds[1].y,s*.62,C.or,.11*mk);
-  if(intro&&intro.t0!=null)drawMap(age);
+  if(intro&&intro.t0!=null){if(age<2200)anchor();drawMap(age)}
   if(ptr.on)glow(ptr.x,ptr.y,170,C.or,.05);
   // constellation lines between close particles
-  ctx.lineWidth=.6;
-  for(var i=0;i<P.length;i++){var p=P[i],cx=(p.x/CELL)|0,cy=(p.y/CELL)|0;
+  ctx.lineWidth=.6;var budget=age<500?0:1400,lk=intro?sm(pr(age,500,1400)):1;
+  for(var i=0;i<P.length&&budget>0;i++){var p=P[i],cx=(p.x/CELL)|0,cy=(p.y/CELL)|0;
     for(var gx=0;gx<=1;gx++)for(var gy=-1;gy<=1;gy++){if(gx===0&&gy<0)continue;var bb=grid.get((cx+gx)+','+(cy+gy));if(!bb)continue;
-      for(var n=0;n<bb.length;n++){var o=P[bb[n]];if(o===p||(gx===0&&gy===0&&bb[n]<=i))continue;var dx=p.x-o.x,dy=p.y-o.y,d2=dx*dx+dy*dy;
-        if(d2<3600){var a=(1-d2/3600)*.11;ctx.strokeStyle='rgba('+(p.c==='or'&&o.c==='or'?C.or:C.iv)+','+a+')';ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(o.x,o.y);ctx.stroke()}}}}
+      for(var n=0;n<bb.length&&n<12;n++){var o=P[bb[n]];if(o===p||(gx===0&&gy===0&&bb[n]<=i))continue;var dx=p.x-o.x,dy=p.y-o.y,d2=dx*dx+dy*dy;
+        if(d2<3600){budget--;var a=(1-d2/3600)*.11*lk;ctx.strokeStyle='rgba('+(p.c==='or'&&o.c==='or'?C.or:C.iv)+','+a+')';ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(o.x,o.y);ctx.stroke()}}}}
   // particles with motion streaks
   for(i=0;i<P.length;i++){p=P[i];var al=p.a*(.65+.35*Math.sin(t*.0012+p.ph)),rgb=C[p.c],v2=p.vx*p.vx+p.vy*p.vy;
     if(v2>.5){ctx.strokeStyle='rgba('+rgb+','+(al*.55)+')';ctx.lineWidth=p.m*.9;ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(p.x-p.vx*4,p.y-p.vy*4);ctx.stroke()}
