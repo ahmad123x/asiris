@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ASIRIS | Creative & Digital Agency</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;800&family=Montserrat:wght@500;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0908;--bg2:#141210;--ivory:#efe9dd;--mute:#a59f93;--or:#ff5a14;--line:rgba(239,233,221,.14);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px);color-scheme:dark}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ivory);font:400 17px/1.9 "Cairo",sans-serif;overflow-x:hidden}
+.en{font-family:"Montserrat","Cairo",sans-serif;direction:ltr}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--or);outline-offset:3px}
+section{padding:96px 22px;max-width:1040px;margin:0 auto}
+h2{font:800 clamp(28px,6vw,48px)/1.3 "Cairo",sans-serif;margin:0 0 20px}
+p{margin:0 0 16px;color:var(--mute);max-width:62ch}
+.hero{min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;max-width:none;padding:60px 22px}
+.hero::before{content:"";position:absolute;width:min(90vw,620px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(255,90,20,.22),transparent 68%);top:50%;left:50%;transform:translate(-50%,-62%);pointer-events:none}
+.mark{width:min(78vw,400px);height:auto;position:relative}
+.logo{font:800 clamp(44px,12vw,92px)/1 "Montserrat",sans-serif;letter-spacing:.03em;margin:8px 0 10px;position:relative}
+.sub{font:500 13px/1.6 "Montserrat",sans-serif;letter-spacing:.34em;color:var(--mute);margin:0 0 6px}
+.sig{font:300 18px/1.6 "Montserrat",sans-serif;letter-spacing:.12em;color:var(--ivory);margin:0 0 34px}
+.btns{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;position:relative}
+.btn{padding:13px 28px;border-radius:999px;border:1px solid var(--line);font-weight:600;transition:background .25s,border-color .25s,color .25s}
+.btn.pri{background:var(--or);border-color:var(--or);color:#120a05}
+.btn:hover{border-color:var(--or)}.btn.pri:hover{background:var(--ivory);border-color:var(--ivory)}
+.lead{font-size:clamp(20px,4vw,28px);line-height:1.8;color:var(--ivory);font-weight:300;max-width:30ch}
+.cols{display:grid;gap:34px;margin-top:34px}
+@media(min-width:760px){.cols{grid-template-columns:1fr 1fr}}
+.pair{font:800 22px "Montserrat",sans-serif;color:var(--ivory)}.pair b{color:var(--or);font-weight:500;margin:0 .35em}
+.svc{display:grid;gap:12px;margin-top:30px}
+@media(min-width:760px){.svc{grid-template-columns:1fr 1fr}}
+details{border:1px solid var(--line);border-radius:18px;padding:20px 22px;background:var(--bg2);transition:border-color .25s}
+details[open]{border-color:var(--or)}
+summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:12px;align-items:center;font-weight:800;font-size:19px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--or);font-size:26px;font-weight:300;line-height:1;transition:transform .25s}
+details[open] summary::after{transform:rotate(45deg)}
+summary small{display:block;font:500 12px "Montserrat",sans-serif;color:var(--mute);letter-spacing:.08em}
+details p{margin:12px 0 10px;font-size:15px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;direction:ltr;justify-content:flex-end}
+.tags span{font:500 12px "Montserrat",sans-serif;border:1px solid var(--line);border-radius:999px;padding:4px 12px;color:var(--ivory)}
+.steps{display:grid;gap:0;margin-top:34px;border-inline-start:2px solid var(--line)}
+.step{padding:6px 26px 26px;position:relative}
+.step::before{content:"";position:absolute;inset-inline-start:-7px;top:14px;width:12px;height:12px;border-radius:50%;background:var(--or);box-shadow:0 0 14px var(--or)}
+.step h3{margin:0;font:800 20px "Montserrat",sans-serif;letter-spacing:.06em}
+.step span{color:var(--mute);font-size:15px}
+.quote{margin-top:30px;font:300 clamp(20px,4vw,30px)/1.6 "Montserrat",sans-serif;direction:ltr;text-align:left}
+.quote em{color:var(--or);font-style:normal;font-weight:500}
+.work{display:grid;gap:14px;margin-top:30px}
+@media(min-width:760px){.work{grid-template-columns:repeat(3,1fr)}}
+.card{aspect-ratio:4/5;border:1px dashed var(--line);border-radius:18px;padding:22px;display:flex;flex-direction:column;justify-content:flex-end;background:linear-gradient(160deg,var(--bg2),var(--bg))}
+.card b{font:800 18px "Montserrat",sans-serif}.card small{color:var(--or);font:500 12px "Montserrat",sans-serif;letter-spacing:.1em}
+.vals{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:30px;font:500 15px "Montserrat",sans-serif;color:var(--mute);direction:ltr}
+.end{text-align:center;padding-top:120px}
+.end .big{font:800 clamp(30px,7vw,60px)/1.5 "Cairo",sans-serif;margin:0 0 40px}
+.end .big span{display:block}.end .big span:last-child{color:var(--or)}
+footer{border-top:1px solid var(--line);text-align:center;padding:30px 22px 40px;color:var(--mute);font:500 12px "Montserrat",sans-serif;letter-spacing:.2em}
+.hero{isolation:isolate}
+.fx{position:absolute;inset:0;overflow:hidden;z-index:-1;pointer-events:none}
+.fx::before{content:'';position:absolute;left:50%;top:45%;width:170vmax;height:170vmax;margin:-85vmax 0 0 -85vmax;background:conic-gradient(from 0deg,transparent 0 306deg,rgba(255,90,20,.16) 336deg,transparent 360deg);-webkit-mask-image:radial-gradient(circle,#000,transparent 42%);mask-image:radial-gradient(circle,#000,transparent 42%);animation:sw 26s linear infinite}
+.fx::after{content:'';position:absolute;inset:0;opacity:.07;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='.5'/></svg>")}
+@keyframes sw{to{transform:rotate(360deg)}}
+.dv{display:flex;justify-content:center;height:24px;direction:ltr;margin:0 auto}
+.dv i{width:22px;height:22px;border-radius:50%;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.dv i:first-child{background:var(--ivory);transform:translateX(-80px)}
+.dv i:last-child{background:var(--or);opacity:.92;transform:translateX(80px)}
+.dv.on i:first-child{transform:translateX(5px)}
+.dv.on i:last-child{transform:translateX(-5px)}
+.cur{position:fixed;left:0;top:0;width:34px;height:34px;margin:-17px 0 0 -17px;border:1.5px solid var(--or);border-radius:50%;pointer-events:none;z-index:9;opacity:0;transition:width .25s,height .25s,margin .25s,background .25s,opacity .25s}
+.cur.on{opacity:1}
+.cur.big{width:64px;height:64px;margin:-32px 0 0 -32px;background:rgba(255,90,20,.12)}
+[hidden]{display:none!important}
+form{max-width:560px;margin-top:28px}
+label{display:block;color:var(--ivory);font-weight:600;margin-bottom:18px}
+input,select,textarea{display:block;width:100%;margin-top:8px;padding:13px 16px;background:var(--bg2);color:var(--ivory);border:1px solid var(--line);border-radius:14px;font:inherit;font-weight:400}
+input:focus,select:focus,textarea:focus{border-color:var(--or)}
+select option{background:#141210;color:#efe9dd}
+textarea{resize:vertical}
+#err{color:var(--or);min-height:1.6em;margin:0 0 10px}
+#res{margin-top:26px}
+form .btns,#res .btns{justify-content:flex-start}
+button.btn{background:transparent;color:var(--ivory);font:inherit;font-weight:600;cursor:pointer}
+button.btn.pri{background:var(--or);color:#120a05}
+button.btn.pri:hover{background:var(--ivory);border-color:var(--ivory)}
+@media(prefers-reduced-motion:reduce){.fx::before{animation:none}}
+.lang{position:fixed;z-index:5;top:calc(env(safe-area-inset-top,0px) + 14px);inset-inline-end:16px;background:rgba(10,9,8,.7);backdrop-filter:blur(8px);color:var(--ivory);border:1px solid var(--line);border-radius:999px;padding:6px 16px;font:600 13px "Montserrat","Cairo",sans-serif;cursor:pointer}
+.lang:hover{border-color:var(--or)}
+html[lang=en] body{font-family:"Montserrat","Cairo",sans-serif;line-height:1.7;font-size:16px}
+html[lang=en] h2,html[lang=en] .big{font-family:"Montserrat",sans-serif;font-weight:800}
+html[lang=en] summary small{display:none}
+html[lang=en] .tags{justify-content:flex-start}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<button class="lang" id="lang" type="button" aria-label="Switch language">EN</button>
+<header class="hero" id="top"><div class="fx" aria-hidden="true"></div>
+<svg class="mark" viewBox="0 0 400 240" role="img" aria-label="ASIRIS">
+<defs>
+<clipPath id="cp"><circle id="cc" cx="150" cy="120" r="100"/></clipPath>
+<filter id="gl" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="14"/></filter>
+</defs>
+<circle id="gb" cx="250" cy="120" r="100" fill="#ff5a14" opacity=".45" filter="url(#gl)"/>
+<circle id="ca" cx="150" cy="120" r="100" fill="#efe9dd"/>
+<circle id="cb" cx="250" cy="120" r="100" fill="#ff5a14"/>
+<circle id="cl" cx="250" cy="120" r="100" fill="#0a0908" clip-path="url(#cp)"/>
+</svg>
+<h1 class="logo">ASIRIS</h1>
+<p class="sub">CREATIVE &amp; DIGITAL AGENCY</p>
+<p class="sig">Two minds. One signal.</p>
+<div class="btns">
+<a class="btn pri" href="#work">شاهد أعمالنا</a>
+<a class="btn" href="#start">ابدأ مشروعك</a>
+</div>
+</header>
+
+<section id="about">
+<h2>من نحن</h2>
+<p class="lead">وكالة إبداعية متكاملة تعمل عند تقاطع الاستراتيجية والإبداع والتكنولوجيا والتسويق الرقمي.</p>
+<div class="cols">
+<div>
+<p>العلامات القوية لا تُبنى بالمظهر وحده، بل برؤية واضحة وفهم عميق للجمهور واستراتيجية تحوّل الأفكار إلى قيمة والحضور إلى تأثير.</p>
+<p>من البصرة ننطلق برؤية تتجاوز الحدود المحلية، ونبني معايير جديدة في الإبداع والتسويق الرقمي.</p>
+</div>
+<div>
+<div class="pair">HMD<b>×</b>SANTOS</div>
+<p style="margin-top:12px">انطلقت ASIRIS من التقاء رؤيتين، لتأسيس كيان يجمع التفكير الاستراتيجي بالجرأة الإبداعية. عقلان، منظوران، وطموح واحد.</p>
+</div>
+</div>
+</section>
+
+<section id="services">
+<h2>ماذا نقدم</h2>
+<div class="svc">
+<details><summary><span>الهوية والاستراتيجية<small>Brand Strategy &amp; Identity</small></span></summary>
+<p>نبني العلامة من أساسها بهوية تعكس شخصية المشروع وتبقى متسقة في كل نقطة تواصل.</p>
+<div class="tags"><span>Brand Strategy</span><span>Positioning</span><span>Naming</span><span>Visual Identity</span><span>Guidelines</span><span>Art Direction</span></div></details>
+<details><summary><span>الإبداع والإعلان<small>Creative &amp; Advertising</small></span></summary>
+<p>أفكار إعلانية مبنية على فهم الجمهور والسوق، تتحول إلى حملات تجذب الانتباه.</p>
+<div class="tags"><span>Concepts</span><span>Campaigns</span><span>Creative Direction</span><span>Copywriting</span></div></details>
+<details><summary><span>التسويق الرقمي<small>Digital Marketing</small></span></summary>
+<p>استراتيجيات ومحتوى مدروس يبني حضوراً فعالاً ويقرّب العلامة من جمهورها.</p>
+<div class="tags"><span>Digital Strategy</span><span>Social Media</span><span>Content</span><span>Performance</span></div></details>
+<details><summary><span>الإنتاج الإبداعي<small>Creative Production</small></span></summary>
+<p>من التصور إلى التنفيذ النهائي: محتوى بصري بقيمة فنية ورسالة واضحة.</p>
+<div class="tags"><span>Photography</span><span>Videography</span><span>Motion Graphics</span><span>Reels</span></div></details>
+<details><summary><span>الإبداع بالذكاء الاصطناعي<small>AI &amp; Next-Gen Creative</small></span></summary>
+<p>نوظف الذكاء الاصطناعي لتوسيع الإمكانيات الإبداعية وتطوير طرق الإنتاج.</p>
+<div class="tags"><span>AI Visual Production</span><span>Generative Content</span><span>Automation</span></div></details>
+<details><summary><span>الحلول الرقمية<small>Digital Solutions</small></span></summary>
+<p>تجارب رقمية تجمع الوظيفة والجمال وسهولة الاستخدام.</p>
+<div class="tags"><span>Websites</span><span>Web Development</span><span>UI / UX</span><span>Platforms</span></div></details>
+</div>
+</section>
+
+<section id="approach">
+<h2>منهجيتنا</h2>
+<p>كل مشروع عندنا يبدأ بسؤال، وليس بتصميم.</p>
+<div class="steps">
+<div class="step"><h3>DISCOVER</h3><span>نفهم المشروع والجمهور والسوق.</span></div>
+<div class="step"><h3>STRATEGIZE</h3><span>نحدد الاتجاه والأهداف.</span></div>
+<div class="step"><h3>CREATE</h3><span>نحوّل الاستراتيجية إلى أفكار وهويات.</span></div>
+<div class="step"><h3>EXECUTE</h3><span>ننفذ وفق معايير احترافية.</span></div>
+<div class="step"><h3>EVOLVE</h3><span>نقيس الأثر ونطوّر العمل باستمرار.</span></div>
+</div>
+<div class="quote">We don’t follow trends.<br><em>We create direction.</em></div>
+<div class="vals"><span>Purpose</span><span>Creativity</span><span>Strategy</span><span>Precision</span><span>Integrity</span><span>Evolution</span></div>
+</section>
+
+<section id="work">
+<h2>أعمالنا</h2>
+<p>نعرض كل مشروع كدراسة حالة: التحدي، الفكرة، التنفيذ، النتيجة. المشاريع التصورية تُوسم بوضوح.</p>
+<div class="work">
+<div class="card"><small>CONCEPT · قريباً</small><b>Brand Identity</b></div>
+<div class="card"><small>CONCEPT · قريباً</small><b>Social Campaign</b></div>
+<div class="card"><small>CONCEPT · قريباً</small><b>Web Experience</b></div>
+</div>
+</section>
+
+<section id='start'>
+<h2>ابدأ مشروعك</h2>
+<p>أخبرنا عن فكرتك، نجهّز لك الطلب وترسله لنا مباشرة على تيليغرام.</p>
+<form id='pf' novalidate>
+<label>الاسم<input id='f1' autocomplete='name' placeholder='اسمك أو اسم الشركة' data-ph-ar='اسمك أو اسم الشركة' data-ph-en='Your name or company'></label>
+<label>الخدمة المطلوبة<select id='f2'><option value='الهوية والاستراتيجية' data-en='Identity &amp; Strategy'>الهوية والاستراتيجية</option><option value='الإبداع والإعلان' data-en='Creative &amp; Advertising'>الإبداع والإعلان</option><option value='التسويق الرقمي' data-en='Digital Marketing'>التسويق الرقمي</option><option value='الإنتاج الإبداعي' data-en='Creative Production'>الإنتاج الإبداعي</option><option value='الإبداع بالذكاء الاصطناعي' data-en='AI Creative'>الإبداع بالذكاء الاصطناعي</option><option value='الحلول الرقمية' data-en='Digital Solutions'>الحلول الرقمية</option></select></label>
+<label>الميزانية التقريبية<select id='f3'><option value='أقل من 500 دولار' data-en='Under $500'>أقل من 500 دولار</option><option value='من 500 إلى 1500 دولار' data-en='$500 to $1,500'>من 500 إلى 1500 دولار</option><option value='أكثر من 1500 دولار' data-en='Over $1,500'>أكثر من 1500 دولار</option><option value='لست متأكداً بعد' data-en='Not sure yet'>لست متأكداً بعد</option></select></label>
+<label>الموعد المطلوب<select id='f4'><option value='بأسرع وقت' data-en='As soon as possible'>بأسرع وقت</option><option value='خلال شهر' data-en='Within a month'>خلال شهر</option><option value='بدون موعد محدد' data-en='No fixed date'>بدون موعد محدد</option></select></label>
+<label>وصف المشروع<textarea id='f5' rows='4' placeholder='اكتب فكرتك أو هدفك باختصار' data-ph-ar='اكتب فكرتك أو هدفك باختصار' data-ph-en='Briefly describe your idea or goal'></textarea></label>
+<p id='err' role='alert'></p>
+<div class='btns'><button class='btn pri' type='submit'>جهّز الطلب</button></div>
+</form>
+<div id='res' hidden>
+<textarea id='msg' readonly rows='8' aria-label='Request'></textarea>
+<p id='hint'>الصق الرسالة في محادثتنا على تيليغرام بعد فتحها.</p>
+<div class='btns'><a class='btn pri' id='go' href='https://t.me/asiriscreative' target='_blank' rel='noopener'>انسخ الطلب وافتح تيليغرام</a></div>
+<p id='ok' role='status'></p>
+</div>
+</section>
+
+<section class="end" id="contact">
+<p class="big"><span>نحن لا نصنع مجرد محتوى.</span><span>نصنع هوية. نخلق رؤية. نبني حضوراً.</span><span>ونحوّل الأفكار إلى أثر.</span></p>
+<div class="btns">
+<a class="btn pri" href="https://www.instagram.com/asiris.creative" target="_blank" rel="noopener" id="ig">Instagram</a>
+<a class="btn" href="https://t.me/asiriscreative" target="_blank" rel="noopener" id="tg">Telegram</a>
+</div>
+</section>
+
+<footer>ASIRIS · CREATIVE &amp; DIGITAL AGENCY · BASRA, IRAQ</footer>
+
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)};
+var A=$("ca"),B=$("cb"),L=$("cl"),C=$("cc"),G=$("gb");
+function set(d){A.setAttribute("cx",200-d);C.setAttribute("cx",200-d);B.setAttribute("cx",200+d);L.setAttribute("cx",200+d);G.setAttribute("cx",200+d)}
+var reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+var base=62,t0=null;
+if(reduce){set(base)}else{
+set(170);
+requestAnimationFrame(function f(t){if(!t0)t0=t;var p=Math.min((t-t0)/1800,1),e=1-Math.pow(1-p,3);set(170+(base-170)*e);if(p<1)requestAnimationFrame(f);else done=true});
+}
+var done=reduce;
+window.addEventListener("scroll",function(){if(!done)return;var y=Math.min(window.scrollY,500);set(base+y/12)},{passive:true});
+})();
+</script>
+<script>
+(function(){
+var M={
+"شاهد أعمالنا":"See our work","ابدأ مشروعك":"Start a project","من نحن":"Who we are",
+"وكالة إبداعية متكاملة تعمل عند تقاطع الاستراتيجية والإبداع والتكنولوجيا والتسويق الرقمي.":"A full-service creative agency working where strategy, creativity, technology and digital marketing meet.",
+"العلامات القوية لا تُبنى بالمظهر وحده، بل برؤية واضحة وفهم عميق للجمهور واستراتيجية تحوّل الأفكار إلى قيمة والحضور إلى تأثير.":"Strong brands aren’t built on looks alone, but on a clear vision, a deep understanding of the audience, and a strategy that turns ideas into value and presence into impact.",
+"من البصرة ننطلق برؤية تتجاوز الحدود المحلية، ونبني معايير جديدة في الإبداع والتسويق الرقمي.":"From Basra, we set out with a vision beyond local borders, building new standards in creativity and digital marketing.",
+"انطلقت ASIRIS من التقاء رؤيتين، لتأسيس كيان يجمع التفكير الاستراتيجي بالجرأة الإبداعية. عقلان، منظوران، وطموح واحد.":"ASIRIS began where two visions met, to build an entity that joins strategic thinking with creative boldness. Two minds, two perspectives, one ambition.",
+"ماذا نقدم":"What we do","الهوية والاستراتيجية":"Identity & Strategy","الإبداع والإعلان":"Creative & Advertising","التسويق الرقمي":"Digital Marketing","الإنتاج الإبداعي":"Creative Production","الإبداع بالذكاء الاصطناعي":"AI Creative","الحلول الرقمية":"Digital Solutions",
+"نبني العلامة من أساسها بهوية تعكس شخصية المشروع وتبقى متسقة في كل نقطة تواصل.":"We build the brand from the ground up, with an identity that reflects the project’s character and stays consistent across every touchpoint.",
+"أفكار إعلانية مبنية على فهم الجمهور والسوق، تتحول إلى حملات تجذب الانتباه.":"Advertising ideas built on understanding the audience and the market, turned into campaigns that capture attention.",
+"استراتيجيات ومحتوى مدروس يبني حضوراً فعالاً ويقرّب العلامة من جمهورها.":"Strategies and considered content that build an effective presence and bring the brand closer to its audience.",
+"من التصور إلى التنفيذ النهائي: محتوى بصري بقيمة فنية ورسالة واضحة.":"From concept to final delivery: visual content with artistic value and a clear message.",
+"نوظف الذكاء الاصطناعي لتوسيع الإمكانيات الإبداعية وتطوير طرق الإنتاج.":"We use AI to expand creative possibilities and evolve how we produce.",
+"تجارب رقمية تجمع الوظيفة والجمال وسهولة الاستخدام.":"Digital experiences that combine function, beauty and ease of use.",
+"منهجيتنا":"Our approach","كل مشروع عندنا يبدأ بسؤال، وليس بتصميم.":"Every project starts with a question, not a design.",
+"نفهم المشروع والجمهور والسوق.":"We understand the project, the audience and the market.","نحدد الاتجاه والأهداف.":"We set the direction and goals.","نحوّل الاستراتيجية إلى أفكار وهويات.":"We turn strategy into ideas and identities.","ننفذ وفق معايير احترافية.":"We execute to professional standards.","نقيس الأثر ونطوّر العمل باستمرار.":"We measure impact and keep improving the work.",
+"أعمالنا":"Our work","نعرض كل مشروع كدراسة حالة: التحدي، الفكرة، التنفيذ، النتيجة. المشاريع التصورية تُوسم بوضوح.":"Every project is shown as a case study: the challenge, the idea, the execution, the result. Concept projects are clearly labeled.",
+"CONCEPT · قريباً":"CONCEPT · SOON",
+'أخبرنا عن فكرتك، نجهّز لك الطلب وترسله لنا مباشرة على تيليغرام.':'Tell us about your idea. We prepare the request and you send it to us directly on Telegram.',
+'الاسم':'Name','الخدمة المطلوبة':'Service needed','الميزانية التقريبية':'Approximate budget','الموعد المطلوب':'Timeline','وصف المشروع':'Project description',
+'أقل من 500 دولار':'Under $500','من 500 إلى 1500 دولار':'$500 to $1,500','أكثر من 1500 دولار':'Over $1,500','لست متأكداً بعد':'Not sure yet',
+'بأسرع وقت':'As soon as possible','خلال شهر':'Within a month','بدون موعد محدد':'No fixed date',
+'جهّز الطلب':'Prepare request','انسخ الطلب وافتح تيليغرام':'Copy request and open Telegram','الصق الرسالة في محادثتنا على تيليغرام بعد فتحها.':'Paste the message into our Telegram chat once it opens.',
+"نحن لا نصنع مجرد محتوى.":"We don’t just make content.","نصنع هوية. نخلق رؤية. نبني حضوراً.":"We make identity. We create vision. We build presence.","ونحوّل الأفكار إلى أثر.":"And turn ideas into impact."
+};
+var orig=new Map(),en=false,h=document.documentElement,btn=document.getElementById("lang");
+function run(){
+var w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT),n,list=[];
+while((n=w.nextNode()))list.push(n);
+list.forEach(function(t){
+if(en){var k=t.nodeValue.trim();if(M[k]){orig.set(t,t.nodeValue);t.nodeValue=t.nodeValue.replace(k,M[k])}}
+else if(orig.has(t)){t.nodeValue=orig.get(t);orig.delete(t)}
+});
+}
+btn.addEventListener("click",function(){
+en=!en;run();
+h.lang=en?"en":"ar";h.dir=en?"ltr":"rtl";
+btn.textContent=en?"عربي":"EN";
+});
+})();
+</script>
+<script>
+(function(){
+var d=document,h=d.documentElement,R=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var dv=[];
+d.querySelectorAll('section').forEach(function(s){var e=d.createElement('div');e.className='dv';e.setAttribute('aria-hidden','true');e.innerHTML='<i></i><i></i>';s.parentNode.insertBefore(e,s);dv.push(e)});
+if(R||!('IntersectionObserver' in window)){dv.forEach(function(e){e.classList.add('on')})}
+else{var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('on');io.unobserve(x.target)}})},{threshold:.6});dv.forEach(function(e){io.observe(e)})}
+if(!R&&window.matchMedia('(hover: hover) and (pointer: fine)').matches){
+var c=d.createElement('div');c.className='cur';d.body.appendChild(c);
+var x=0,y=0,tx=0,ty=0,go=false;
+d.addEventListener('mousemove',function(e){tx=e.clientX;ty=e.clientY;c.classList.add('on');if(!go){go=true;x=tx;y=ty;requestAnimationFrame(tick)}});
+function tick(){x+=(tx-x)*.18;y+=(ty-y)*.18;c.style.transform='translate('+x+'px,'+y+'px)';requestAnimationFrame(tick)}
+d.addEventListener('mouseover',function(e){c.classList.toggle('big',!!(e.target.closest&&e.target.closest('a,button,summary,.card,select')))});
+h.addEventListener('mouseleave',function(){c.classList.remove('on')});
+}
+d.getElementById('lang').addEventListener('click',function(){
+var en=h.lang==='en';
+d.querySelectorAll('[data-ph-en]').forEach(function(i){i.placeholder=en?i.getAttribute('data-ph-en'):i.getAttribute('data-ph-ar')});
+d.getElementById('res').hidden=true;d.getElementById('err').textContent='';
+});
+var T={ar:{h:'مرحباً ASIRIS، أريد البدء بمشروع.',n:'الاسم',s:'الخدمة',b:'الميزانية',t:'الموعد',p:'وصف المشروع',e:'اكتب اسمك ووصف المشروع أولاً.',ok:'تم نسخ الطلب. الصقه في محادثة تيليغرام.'},en:{h:'Hello ASIRIS, I would like to start a project.',n:'Name',s:'Service',b:'Budget',t:'Timeline',p:'Project',e:'Please enter your name and a short project description.',ok:'Request copied. Paste it into the Telegram chat.'}};
+function tt(){return T[h.lang==='en'?'en':'ar']}
+function val(id){var s=d.getElementById(id),o=s.options[s.selectedIndex];return h.lang==='en'?o.getAttribute('data-en'):o.value}
+d.getElementById('pf').addEventListener('submit',function(ev){
+ev.preventDefault();
+var t=tt(),n=d.getElementById('f1').value.trim(),p=d.getElementById('f5').value.trim(),er=d.getElementById('err'),r=d.getElementById('res');
+if(!n||!p){er.textContent=t.e;r.hidden=true;return}
+er.textContent='';d.getElementById('ok').textContent='';
+d.getElementById('msg').value=[t.h,'',t.n+': '+n,t.s+': '+val('f2'),t.b+': '+val('f3'),t.t+': '+val('f4'),t.p+': '+p].join('\n');
+r.hidden=false;r.scrollIntoView({behavior:R?'auto':'smooth',block:'nearest'});
+});
+d.getElementById('go').addEventListener('click',function(){
+var ta=d.getElementById('msg');
+try{ta.select();ta.setSelectionRange(0,99999);d.execCommand('copy')}catch(e){}
+try{navigator.clipboard.writeText(ta.value)}catch(e){}
+d.getElementById('ok').textContent=tt().ok;
+});
+})();
+</script>
+</body>
+</html>
